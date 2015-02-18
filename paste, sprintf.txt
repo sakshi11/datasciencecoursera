@@ -1,0 +1,83 @@
+a <- "apple"
+b <- "banana"
+
+# Put a and b together, with a space in between:
+paste(a, b)
+# "apple banana"
+
+# With no space:
+paste(a, b, sep="")
+# "applebanana"
+
+# With a comma and space:
+paste(a, b, sep=", ")
+# "apple, banana"
+
+
+# With a vector
+d <- c("fig", "grapefruit", "honeydew")
+
+# If the input is a vector, use collapse to put the elements together:
+paste(d, collapse=", ")
+# "fig, grapefruit, honeydew"
+
+# If the input is a scalar and a vector, it puts the scalar with each
+# element of the vector, and returns a vector:
+paste(a, d)
+# "apple fig"  "apple grapefruit"  "apple honeydew"  
+
+# Use sep and collapse:
+paste(a, d, sep="-", collapse=", ")
+# "apple-fig, apple-grapefruit, apple-honeydew"
+
+
+
+
+
+
+To substitute in a string or string variable, use %s:
+
+a <- "string"
+sprintf("This is where a %s goes.", a)
+# "This is where a string goes."
+For integers, use %d or a variant:
+
+x <- 8
+sprintf("Regular:%d", x)
+# "Regular:8"
+
+# Can print to take some number of characters, leading with spaces.
+sprintf("Leading spaces:%4d", x)
+# "Leading spaces:   8"
+
+# Can also lead with zeros instead.
+sprintf("Leading zeros:%04d", x)
+#"Leading zeros:0008:"
+
+For floating-point numbers, use %f for standard notation, and %e or %E for exponential notation. You can also use %g or %G for a "smart" formatter that automatically switches between the two formats, depending on where the significant digits are. The following examples are taken from the R help page for sprintf:
+
+sprintf("%f", pi)         # "3.141593"
+sprintf("%.3f", pi)       # "3.142"
+sprintf("%1.0f", pi)      # "3"
+sprintf("%5.1f", pi)      # "  3.1"
+sprintf("%05.1f", pi)     # "003.1"
+sprintf("%+f", pi)        # "+3.141593"
+sprintf("% f", pi)        # " 3.141593"
+sprintf("%-10f", pi)      # "3.141593  "   (left justified)
+sprintf("%e", pi)         #"3.141593e+00"
+sprintf("%E", pi)         # "3.141593E+00"
+sprintf("%g", pi)         # "3.14159"
+sprintf("%g",   1e6 * pi) # "3.14159e+06"  (exponential)
+sprintf("%.9g", 1e6 * pi) # "3141592.65"   ("fixed")
+sprintf("%G", 1e-6 * pi)  # "3.14159E-06"
+In the %m.nf format specification: The m represents the field width, which is the minimum number of characters in the output string, and can be padded with leading spaces, or zeros if there is a zero in front of m. The n represents precision, which the number of digits after the decimal.
+
+Other miscellaneous things:
+
+x <- "string"
+sprintf("Substitute in multiple strings: %s %s", x, "string2")
+# "Substitute in multiple strings: string string2"
+
+# To print a percent sign, use "%%"
+sprintf("A single percent sign here %%")
+# "A single percent sign here %"

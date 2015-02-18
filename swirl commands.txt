@@ -1,0 +1,66 @@
+When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what you
+| do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+?InstallCourses
+
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+If at any point you'd like more information on a particular topic related to R, you
+| can type help.start() at the prompt, which will open a menu of resources (either
+| within RStudio or your default web browser, depending on your setup). Alternatively, a
+| simple web search often yields the answer you're looking for.
+
+To open a more complete description of the dataset in a separate
+| text file, type viewinfo() when you are back at the prompt (>).
+
+(use warnings() to see them
+
+plot(x= ,y= ,xlab= ,ylab= ,main= , sub= ,...)
+
+col=2 - red color
+
+xlim = c(10, 15) - limit x axis
+
+Plot cars using triangles.  (Use pch = 2 
+
+The plot help page (?plot) only covers a small number of the many arguments that can
+| be passed in to plot() and to other graphical functions. To begin to explore the many
+| other options, look at ?par. Let's look at some of the more commonly used ones.
+
+You can also change the shape of the symbols in the plot. The help page for points
+| (?points) provides the details
+
+Arguments like "col" and "pch" may not seem very intuitive. And that is because they
+| aren't! So, many/most people use more modern packages, like ggplot2, for creating
+| their graphics in R.
+
+another package- lattice
+
+Type data(mtcars) to load the data.
+
+Instead of adding data columns directly as input arguments, as we did with plot(), it
+| is often handy to pass in the entire data frame. This is what the "data" argument in
+| boxplot() allows.
+
+boxplot(), like many R functions, also takes a "formula" argument, generally an
+| expression with a tilde ("~") which indicates the relationship between the input
+| variables. This allows you to enter something like mpg ~ cyl to plot the relationship
+| between cyl (number of cylinders) on the x-axis and mpg (miles per gallon) on the
+| y-axis.
+
+
+
+When looking at a single variable, histograms are a useful tool. hist() is the
+| associated R function. Like plot(), hist() is best used by just passing in a single
+| vector.
+
+(http://www.ling.upenn.edu/~joseff/rstudy/week4.html)
